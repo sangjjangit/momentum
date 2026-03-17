@@ -4,9 +4,17 @@ body {
   height: 100vh;
   display: grid;
   grid-template-columns: 3fr minmax(420px, 4fr) 3fr;
-  grid-template-rows: 1fr 4fr 3fr;
+  grid-template-rows: 2fr 4fr 3fr;
 }
 
+@keyframes bgAnimation {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
 /* background.css */
 img {
   width: 100%;
@@ -14,6 +22,30 @@ img {
   position: absolute;
   top: 0px;
   z-index: -1;
+  animation: bgAnimation 0.3s linear forwards;
+}
+
+.search-header {
+  grid-column: 2;
+  grid-row: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+  * {
+    width: 100%;
+  }
+  .search-header__searching {
+    padding: 15px;
+    background-color: rgba(255,255,255,0.5);
+    border: 0px solid rgba(255,255,255,0.5);
+    border-radius: 22px;
+    font-size: 22px;
+    text-align: center;
+  }
+  .search-header__searching::placeholder {
+    text-align: center;
+  }
 }
 
 /* clock.css */
@@ -99,4 +131,8 @@ img {
 
 .hidden {
   display: none;
+}
+
+input:focus {
+  outline: none;
 }
