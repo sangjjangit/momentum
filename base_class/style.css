@@ -1,0 +1,12 @@
+body {
+  background-color: bisque;
+}
+
+div.hello h1#title {
+  color: blue;
+  transition: color 0.3s ease-in-out;
+}
+
+div.hello h1#title.clicked {
+  color: tomato;
+}
