@@ -3,7 +3,8 @@ const searchInput = document.querySelector("#search-input");
 
 function onSearchSubmit (event) {
   event.preventDefault();
-  location.href = `https://www.google.com/search?q=${searchInput.value}`;
+  window.open(`https://www.google.com/search?q=${searchInput.value}`, '_blank');
+
   searchInput.value = "";
 }
 
