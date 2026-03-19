@@ -29,9 +29,17 @@ function paintTodo (newTodo) {
   const btn = document.createElement("button");
 
   li.id = newTodo.id;
-  // span.innerText = newTodo;
+  li.classList.add("flex");
+  li.classList.add("items-center");
+  li.classList.add("justify-center");
+
+  btn.classList.add("rounded-xl");
+  btn.classList.add("p-2");
+  btn.classList.add("text-sm");
+  span.classList.add("text-lg");
   span.innerText = newTodo.text;
   btn.innerText = "❌";
+  // btn.innerHTML = '<i class="fa-regular fa-circle-xmark"></i>';
   btn.addEventListener("click", deleteTodo);
 
   li.appendChild(span);

@@ -1,45 +1,54 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="css/style.css">
+  <!-- <link rel="stylesheet" href="css/style.css"> -->
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
   <title>Momentum App</title>
 </head>
-<body>
-  <header class="search-header">
-    <i class="fa-solid fa-magnifying-glass fa-2x"></i>
-    <form id="search-form">
-      <input autofocus id="search-input" type="text" class="search-header__searching" placeholder="Search Google" />
+<body class="grid grid-rows-4">
+
+  <header class="flex items-center justify-center gap-2 mx-8">
+    <i class="fa-solid fa-magnifying-glass fa-xl"></i>
+    <form id="search-form" class="w-full md:w-3xl">
+      <input autofocus id="search-input" type="text" class="p-2 rounded-xl w-full text-center placeholder:text-center" placeholder="Search Google" />
     </form>
   </header>
-  <div class="center-container">
-    <div id="weather">
+
+  <div class="flex flex-col items-center gap-5 mt-10">
+    <div id="weather" class="text-sm font-medium">
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
       <span></span>
       <span></span>
     </div>
-    <h2 id="clock">00:00:00</h2>
+
+    <h2 id="clock" class="text-3xl font-semibold">00:00:00</h2>
     <form id="login-form" class="hidden">
-      <input required maxlength="15" type="text" placeholder="What is your name?">
-      <button>Log In</button>
+      <input class="p-2 rounded-xl placeholder:text-center" required maxlength="15" type="text" placeholder="What is your name?">
+      <button class="bg-indigo-500/90 hover:bg-indigo-500 cursor-pointer p-2 rounded-xl font-semibold text-white">Log In</button>
     </form>
-    <h1 id="greeting" class="hidden"></h1>
+    <h1 id="greeting" class="hidden text-3xl font-semibold"></h1>
   </div>
 
-  <div class="todo-container">
-    <div class="todo-container__todo-list">
-      <ul class="todo-container__todo-item" id="todo-list"></ul>
-    </div>
+  <div class="flex flex-col items-center gap-5 mt-10">
     <div class="todo-container__input">
       <form class="todo-container__form" id="todo-form">
-        <input required type="text" placeholder="Write a To Do and Press Enter">
+        <input class="p-2 rounded-xl placeholder:text-center" required type="text" placeholder="Write a To Do and Press Enter">
       </form>
+    </div>
+    <div class="todo-container__todo-list">
+      <ul class="flex justify-center gap-3 flex-wrap grow-0" id="todo-list"></ul>
     </div>
   </div>
 
-  <div id="quote">
-    <span></span>
-    <span></span>
+  <div id="quote" class="flex flex-col items-center justify-center gap-2 mt-10 mx-10">
+    <span class="font-semibold text-xl"></span>
+    <span class="font-semibold text-lg"></span>
   </div>
 
   <script src="https://kit.fontawesome.com/614191dbd5.js" crossorigin="anonymous"></script>
